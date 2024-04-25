@@ -1,0 +1,49 @@
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border: 1px solid #000;
+    background-color: #fff;
+    margin: 2px;
+    
+    
+}
+
+.square {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+#upper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: #cce5ff;
+}
+
+button[disabled] {
+    /* Adicione aqui o estilo desejado para botões desabilitados */
+    opacity: 0.5; /* Por exemplo, reduzindo a opacidade */
+    cursor: not-allowed; /* Alterando o cursor */
+}
