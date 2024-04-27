@@ -1,51 +1,13 @@
 var arrButtonClicked = [];
+let x = 0;
+let clickback = 0;
 $(document).ready(() => {
-    let x = 0;
-    $(".back").on("click", function () {
-        var but = arrButtonClicked[arrButtonClicked.length-1];
-        console.log(but);
-        $("button[class^=" + but +"]").css("background", "white")
-        $("button[class^=" + but+"]").css("border-color", "black")
-        $("button[class^=" + but+"]").text("")
-        nextFocus(but.substring(7,8))
-
-        arrButtonClicked.pop()
-    })
-
-    $(".tic-tac button").on("click", function () {
-
-        $(this).css("background", "none")
-        $(this).css("border-color", "transparent")
 
 
-
-        console.log($(this).attr("class"));
-
-        arrButtonClicked.push($(this).attr("class"))
-        console.log(arrButtonClicked);
-        x++;
-        if (x % 2) {
-            //$(this).css("background-image", "url('resources/cruz.png'")
-            $(this).text("X")
-            $(this).css("color", "red")
-
-            $(this).off('click');
-        }
-        else {
-            //$(this).css("background-image", "url('resources/bola.png'")
-            $(this).html("O")
-            $(this).css("color", "green")
-            $(this).off('click');
-        }
-
-        let numOfSquare = $(this).attr("class").substring(7, 8)
-        verifyLines(numOfSquare);
-
-        let numOfButton = $(this).attr("class").substring(9, 10);
-        nextFocus(numOfButton);
-
-
-    })
+    backOnOrOff()
+    $(".back").on("click", backClick)
+    $(".restart").on("click", restartClick)
+    $(".tic-tac button").on("click", click)
 
 })
 
@@ -86,8 +48,10 @@ function verifyLines(num) {
 
     if (line) {
         buttonsArray.forEach(button => {
+
             if (!button.prop("disabled")) {
                 button.prop("disabled", true);
+                button.remove()
                 $("#square" + num).css("padding", "0px");
                 $("." + num).remove()
                 $("#img" + num).show()
@@ -107,5 +71,71 @@ function nextFocus(num) {
         $(".tic-tac").find("button").prop("disabled", true);
         $(".tic-tac").find("button[class^='button-" + num + "-']").prop("disabled", false);
     }
+    if (x === 0) {
+        $(".tic-tac").find("button").prop("disabled", false);
+    }
+
 }
 
+function backOnOrOff() {
+    if (arrButtonClicked.length === 0) {
+        $(".back").prop("disabled", true)
+    }
+    else {
+        $(".back").prop("disabled", false)
+    }
+}
+
+function click() {
+    $(this).css("background", "none")
+    $(this).css("border-color", "transparent")
+
+    console.log($(this).attr("class"));
+    arrButtonClicked.push($(this).attr("class"))
+    x++;
+    backOnOrOff()
+
+    XorO($(this).attr("class"))
+    let numOfSquare = $(this).attr("class").substring(7, 8)
+    verifyLines(numOfSquare);
+
+    let numOfButton = $(this).attr("class").substring(9, 10);
+    nextFocus(numOfButton);
+    console.log("Cliques: " + x);
+}
+
+function backClick() {
+    x--;
+    var but = arrButtonClicked[arrButtonClicked.length - 1];
+    console.log(but);
+    $("button[class^=" + but + "]").css("background", "white")
+    $("button[class^=" + but + "]").css("border-color", "black")
+    $("button[class^=" + but + "]").text("")
+    $("button[class^=" + but + "]").on('click', click);
+    nextFocus(but.substring(7, 8))
+
+    arrButtonClicked.pop()
+
+    backOnOrOff()
+}
+
+function restartClick() {
+    confirm("Are you sure you want to upgrade. You will lose the game process")
+    location.reload();
+}
+
+function XorO(num) {
+    if (x % 2) {
+        //$(this).css("background-image", "url('resources/cruz.png'")
+        $("button[class^=" + num + "]").text("X")
+        $("button[class^=" + num + "]").css("color", "red")
+
+        $("button[class^=" + num + "]").off('click');
+    }
+    else {
+        //$(this).css("background-image", "url('resources/bola.png'")
+        $("button[class^=" + num + "]").html("O")
+        $("button[class^=" + num + "]").css("color", "green")
+        $("button[class^=" + num + "]").off('click');
+    }
+}
