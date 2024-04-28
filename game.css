@@ -10,10 +10,11 @@ button {
     text-align: center;
     border: 1px solid #000;
     background-color: #fff;
+    border-radius: 20%;
     margin: 2px;
     font-size: 23px;
-    text-align: center;
 }
+
 
 .square {
     padding: 20px;
@@ -56,4 +57,31 @@ button[disabled] {
     font-family: 'Indie Flower', cursive;
     text-align: center;
     line-height: 28px;
+    margin: 10px;
+}
+
+.tic-tac {
+    margin: 20px;
+}
+
+button:hover {
+    background-color: #007bff;
+    /* Cor de fundo quando hover */
+    color: #fff;
+    /* Cor do texto quando hover */
+    border: 1px solid #007bff;
+    /* Borda quando hover */
+    transition: background-color 1s ease;
+    /* Transição suave de cor de fundo */
+}
+
+.perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.shadow {
+    filter : drop-shadow(5px 5px 5px red) ;
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1 id="center">Welcome to Tic-tac-Toe-2.0</h1>
+    <br>
+    <br>
+    <div class="container">
+        <form id="playerForm1">
+            <label>Name Player 1:</label>
+            <input type="text" name="player1" class="test">
+            <br>
+        </form>
+
+        <form id="playerForm2">
+            <label>Name Player 2:</label>
+            <input type="text" name="player2" class="test">
+            <br>
+        </form>
+    </div>
+
+    <a id="center" href="#" class="redirectButton"><button>Ir para outra página</button></a>
+    <script>
+        $(document).ready(function () {
+
+            $('.redirectButton').click(function (event) {
+                event.preventDefault(); // Evita que o link execute o comportamento padrão
+                send()
+            });
+
+            function send() {
+                var player1 = $('#playerForm1').find('input[name="player1"]').val();
+                var player2 = $('#playerForm2').find('input[name="player2"]').val();
+
+                var url = 'game.html?player1=' + encodeURIComponent(player1) + '&player2=' + encodeURIComponent(player2);
+                window.location.href = url;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

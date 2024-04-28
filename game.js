@@ -3,12 +3,13 @@ let x = 0;
 let clickback = 0;
 $(document).ready(() => {
 
-
+    $(".player1Name").html(obterParametro('player1'))
+    $(".player2Name").html(obterParametro('player2'))
     backOnOrOff()
     $(".back").on("click", backClick)
     $(".restart").on("click", restartClick)
     $(".tic-tac button").on("click", click)
-
+    shadow()
 })
 
 function verifyLines(num) {
@@ -51,7 +52,7 @@ function verifyLines(num) {
 
             if (!button.prop("disabled")) {
                 button.prop("disabled", true);
-                button.remove()
+                button.hide()
                 $("#square" + num).css("padding", "0px");
                 $("." + num).remove()
                 $("#img" + num).show()
@@ -89,9 +90,12 @@ function backOnOrOff() {
 function click() {
     $(this).css("background", "none")
     $(this).css("border-color", "transparent")
+    $(this).css("text-decoration-line", "underline")
 
     console.log($(this).attr("class"));
     arrButtonClicked.push($(this).attr("class"))
+
+    lastClick()
     x++;
     backOnOrOff()
 
@@ -102,6 +106,7 @@ function click() {
     let numOfButton = $(this).attr("class").substring(9, 10);
     nextFocus(numOfButton);
     console.log("Cliques: " + x);
+    shadow()
 }
 
 function backClick() {
@@ -114,8 +119,9 @@ function backClick() {
     $("button[class^=" + but + "]").on('click', click);
     nextFocus(but.substring(7, 8))
 
+    var classbutton = arrButtonClicked[arrButtonClicked.length - 2]
+    $("button[class^=" + classbutton + "]").css("text-decoration-line", "underline")
     arrButtonClicked.pop()
-
     backOnOrOff()
 }
 
@@ -137,5 +143,26 @@ function XorO(num) {
         $("button[class^=" + num + "]").html("O")
         $("button[class^=" + num + "]").css("color", "green")
         $("button[class^=" + num + "]").off('click');
+    }
+}
+function obterParametro(nome) {
+    // Obtém o valor do parâmetro especificado na URL
+    return new URLSearchParams(window.location.search).get(nome);
+}
+
+function lastClick() {
+    var classbutton = arrButtonClicked[arrButtonClicked.length - 2]
+    $("button[class^=" + classbutton + "]").css("text-decoration-line", "none")
+}
+
+function shadow() {
+    if (x % 2) {
+        console.log("certerza");
+        $(".shadowGreen").css("filter", "drop-shadow(5px 5px 5px black)")
+        $(".shadowRed").css("filter", "drop-shadow(0px 0px 0px red)")
+    }
+    else {
+        $(".shadowRed").css("filter", "drop-shadow(5px 5px 5px black)")
+        $(".shadowGreen").css("filter", "drop-shadow(0px 0px 0px green)")
     }
 }

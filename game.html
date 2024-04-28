@@ -14,147 +14,159 @@
 <body>
     <h1 id="game">Tic-tac-toe-2.0</h1>
     <h3 id="game"></h3>
-    <div class="tic-tac">
-        <div id="upper">
-            <div class="square" id="square1">
-                <button class="button-1-1"></button>
-                <button class="button-1-2"></button>
-                <button class="button-1-3"></button>
-                <br class="1">
-                <button class="button-1-4"></button>
-                <button class="button-1-5"></button>
-                <button class="button-1-6"></button>
-                <br class="1">
-                <button class="button-1-7"></button>
-                <button class="button-1-8"></button>
-                <button class="button-1-9"></button>
-                <img id="img1" style="display: none;">
-            </div>
-            <div class="square" id="square2">
-                <button class="button-2-1"></button>
-                <button class="button-2-2"></button>
-                <button class="button-2-3"></button>
-                <br class="2">
-                <button class="button-2-4"></button>
-                <button class="button-2-5"></button>
-                <button class="button-2-6"></button>
-                <br class="2">
-                <button class="button-2-7"></button>
-                <button class="button-2-8"></button>
-                <button class="button-2-9"></button>
-                <img id="img2" style="display: none;">
-            </div>
-            <div class="square" id="square3">
-                <button class="button-3-1"></button>
-                <button class="button-3-2"></button>
-                <button class="button-3-3"></button>
-                <br class="3">
-                <button class="button-3-4"></button>
-                <button class="button-3-5"></button>
-                <button class="button-3-6"></button>
-                <br class="3">
-                <button class="button-3-7"></button>
-                <button class="button-3-8"></button>
-                <button class="button-3-9"></button>
-                <img id="img3" style="display: none;">
-            </div>
+    <div id="game">
+        <div class="perfil">
+            <img src="resources/vermelho.png" class="shadowRed">
+            <p class="player1Name"></p>
+            <p>X</p>
         </div>
-        <div id="middle">
-            <div class="square" id="square4">
-                <button class="button-4-1"></button>
-                <button class="button-4-2"></button>
-                <button class="button-4-3"></button>
-                <br class="4">
-                <button class="button-4-4"></button>
-                <button class="button-4-5"></button>
-                <button class="button-4-6"></button>
-                <br class="4">
-                <button class="button-4-7"></button>
-                <button class="button-4-8"></button>
-                <button class="button-4-9"></button>
-                <img id="img4" style="display: none;">
+        <div class="tic-tac">
+            <div id="upper">
+                <div class="square" id="square1">
+                    <button class="button-1-1"></button>
+                    <button class="button-1-2"></button>
+                    <button class="button-1-3"></button>
+                    <br class="1">
+                    <button class="button-1-4"></button>
+                    <button class="button-1-5"></button>
+                    <button class="button-1-6"></button>
+                    <br class="1">
+                    <button class="button-1-7"></button>
+                    <button class="button-1-8"></button>
+                    <button class="button-1-9"></button>
+                    <img id="img1" style="display: none;">
+                </div>
+                <div class="square" id="square2">
+                    <button class="button-2-1"></button>
+                    <button class="button-2-2"></button>
+                    <button class="button-2-3"></button>
+                    <br class="2">
+                    <button class="button-2-4"></button>
+                    <button class="button-2-5"></button>
+                    <button class="button-2-6"></button>
+                    <br class="2">
+                    <button class="button-2-7"></button>
+                    <button class="button-2-8"></button>
+                    <button class="button-2-9"></button>
+                    <img id="img2" style="display: none;">
+                </div>
+                <div class="square" id="square3">
+                    <button class="button-3-1"></button>
+                    <button class="button-3-2"></button>
+                    <button class="button-3-3"></button>
+                    <br class="3">
+                    <button class="button-3-4"></button>
+                    <button class="button-3-5"></button>
+                    <button class="button-3-6"></button>
+                    <br class="3">
+                    <button class="button-3-7"></button>
+                    <button class="button-3-8"></button>
+                    <button class="button-3-9"></button>
+                    <img id="img3" style="display: none;">
+                </div>
             </div>
-            <div class="square" id="square5">
-                <button class="button-5-1"></button>
-                <button class="button-5-2"></button>
-                <button class="button-5-3"></button>
-                <br class="5">
-                <button class="button-5-4"></button>
-                <button class="button-5-5"></button>
-                <button class="button-5-6"></button>
-                <br class="5">
-                <button class="button-5-7"></button>
-                <button class="button-5-8"></button>
-                <button class="button-5-9"></button>
-                <img id="img5" style="display: none;">
+            <div id="middle">
+                <div class="square" id="square4">
+                    <button class="button-4-1"></button>
+                    <button class="button-4-2"></button>
+                    <button class="button-4-3"></button>
+                    <br class="4">
+                    <button class="button-4-4"></button>
+                    <button class="button-4-5"></button>
+                    <button class="button-4-6"></button>
+                    <br class="4">
+                    <button class="button-4-7"></button>
+                    <button class="button-4-8"></button>
+                    <button class="button-4-9"></button>
+                    <img id="img4" style="display: none;">
+                </div>
+                <div class="square" id="square5">
+                    <button class="button-5-1"></button>
+                    <button class="button-5-2"></button>
+                    <button class="button-5-3"></button>
+                    <br class="5">
+                    <button class="button-5-4"></button>
+                    <button class="button-5-5"></button>
+                    <button class="button-5-6"></button>
+                    <br class="5">
+                    <button class="button-5-7"></button>
+                    <button class="button-5-8"></button>
+                    <button class="button-5-9"></button>
+                    <img id="img5" style="display: none;">
+                </div>
+                <div class="square" id="square6">
+                    <button class="button-6-1"></button>
+                    <button class="button-6-2"></button>
+                    <button class="button-6-3"></button>
+                    <br class="6">
+                    <button class="button-6-4"></button>
+                    <button class="button-6-5"></button>
+                    <button class="button-6-6"></button>
+                    <br class="6">
+                    <button class="button-6-7"></button>
+                    <button class="button-6-8"></button>
+                    <button class="button-6-9"></button>
+                    <img id="img6" style="display: none;">
+                </div>
             </div>
-            <div class="square" id="square6">
-                <button class="button-6-1"></button>
-                <button class="button-6-2"></button>
-                <button class="button-6-3"></button>
-                <br class="6">
-                <button class="button-6-4"></button>
-                <button class="button-6-5"></button>
-                <button class="button-6-6"></button>
-                <br class="6">
-                <button class="button-6-7"></button>
-                <button class="button-6-8"></button>
-                <button class="button-6-9"></button>
-                <img id="img6" style="display: none;">
+            <div id="lower">
+                <div class="square" id="square7">
+                    <button class="button-7-1"></button>
+                    <button class="button-7-2"></button>
+                    <button class="button-7-3"></button>
+                    <br class="7">
+                    <button class="button-7-4"></button>
+                    <button class="button-7-5"></button>
+                    <button class="button-7-6"></button>
+                    <br class="7">
+                    <button class="button-7-7"></button>
+                    <button class="button-7-8"></button>
+                    <button class="button-7-9"></button>
+                    <img id="img7" style="display: none;">
+                </div>
+                <div class="square" id="square8">
+                    <button class="button-8-1"></button>
+                    <button class="button-8-2"></button>
+                    <button class="button-8-3"></button>
+                    <br class="8">
+                    <button class="button-8-4 test"></button>
+                    <button class="button-8-5"></button>
+                    <button class="button-8-6"></button>
+                    <br class="8">
+                    <button class="button-8-7 test"></button>
+                    <button class="button-8-8"></button>
+                    <button class="button-8-9"></button>
+                    <img id="img8" style="display: none;">
+                </div>
+                <div class="square" id="square9">
+                    <button class="button-9-1"></button>
+                    <button class="button-9-2"></button>
+                    <button class="button-9-3"></button>
+                    <br class="9">
+                    <button class="button-9-4"></button>
+                    <button class="button-9-5"></button>
+                    <button class="button-9-6"></button>
+                    <br class="9">
+                    <button class="button-9-7"></button>
+                    <button class="button-9-8"></button>
+                    <button class="button-9-9"></button>
+                    <img id="img9" style="display: none;">
+                </div>
             </div>
+
         </div>
-        <div id="lower">
-            <div class="square" id="square7">
-                <button class="button-7-1"></button>
-                <button class="button-7-2"></button>
-                <button class="button-7-3"></button>
-                <br class="7">
-                <button class="button-7-4"></button>
-                <button class="button-7-5"></button>
-                <button class="button-7-6"></button>
-                <br class="7">
-                <button class="button-7-7"></button>
-                <button class="button-7-8"></button>
-                <button class="button-7-9"></button>
-                <img id="img7" style="display: none;">
-            </div>
-            <div class="square" id="square8">
-                <button class="button-8-1"></button>
-                <button class="button-8-2"></button>
-                <button class="button-8-3"></button>
-                <br class="8">
-                <button class="button-8-4 test"></button>
-                <button class="button-8-5"></button>
-                <button class="button-8-6"></button>
-                <br class="8">
-                <button class="button-8-7 test"></button>
-                <button class="button-8-8"></button>
-                <button class="button-8-9"></button>
-                <img id="img8" style="display: none;">
-            </div>
-            <div class="square" id="square9">
-                <button class="button-9-1"></button>
-                <button class="button-9-2"></button>
-                <button class="button-9-3"></button>
-                <br class="9">
-                <button class="button-9-4"></button>
-                <button class="button-9-5"></button>
-                <button class="button-9-6"></button>
-                <br class="9">
-                <button class="button-9-7"></button>
-                <button class="button-9-8"></button>
-                <button class="button-9-9"></button>
-                <img id="img9" style="display: none;">
-            </div>
+
+        <div class="perfil">
+            <img src="resources/verde.png" class="shadowGreen">
+            <p class="player2Name"></p>
+            <p>O</p>
         </div>
     </div>
-    <br>
     <div id="game">
         <button class="backAndFront back">Back</button>
         <button class="backAndFront restart">Restart</button>
+        <button class="backAndFront rule">Rules</button>
     </div>
-
-
 </body>
 
 </html>
