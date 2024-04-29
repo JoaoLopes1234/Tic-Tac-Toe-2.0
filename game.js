@@ -35,14 +35,14 @@ function verifyLines(num) {
     if ((first === "X" && second === "X" && third === "X") || (first === "X" && fourth === "X" && seventh === "X") || (seventh === "X" && eighth === "X" && ninth === "X") ||
         (third === "X" && sixth === "X" && ninth === "X") || (first === "X" && fifth === "X" && ninth === "X") || (third === "X" && fifth === "X" && seventh === "X") ||
         (second === "X" && fifth === "X" && eighth === "X") || (fourth === "X" && fifth === "X" && sixth === "X")) {
-        $("#img" + num).attr("src", "resources/cruzMaior.png")
+        $("#img" + num).attr("src", "resources/RedCross.png")
         line = true
     }
 
     if ((first === "O" && second === "O" && third === "O") || (first === "O" && fourth === "O" && seventh === "O") || (third === "O" && sixth === "O" && ninth === "O") ||
         (first === "O" && fifth === "O" && ninth === "O") || (third === "O" && fifth === "O" && seventh === "O") || (second === "O" && fifth === "O" && eighth === "O") ||
         (fourth === "O" && fifth === "O" && sixth === "O") || (seventh === "O" && eighth === "O" && ninth === "O")) {
-        $("#img" + num).attr("src", "resources/bolaMaior.png")
+        $("#img" + num).attr("src", "resources/GreenBall.png")
         line = true
     }
 
@@ -53,12 +53,12 @@ function verifyLines(num) {
             if (!button.prop("disabled")) {
                 button.prop("disabled", true);
                 button.hide()
-                $("#square" + num).css("padding", "0px");
-                $("." + num).remove()
-                $("#img" + num).show()
-                $("#success")[0].play()
             }
         });
+        $("#square" + num).css("padding", "0px");
+        $("." + num).hide()
+        $("#img" + num).show()
+        $("#success")[0].play()
         return true;
     }
 }
@@ -113,17 +113,33 @@ function click() {
 
 function backClick() {
     x--;
-    var but = arrButtonClicked[arrButtonClicked.length - 1];
-    console.log(but);
-    $("button[class^=" + but + "]").css("background", "white")
-    $("button[class^=" + but + "]").css("border-color", "black")
-    $("button[class^=" + but + "]").text("")
-    $("button[class^=" + but + "]").on('click', click);
-    nextFocus(but.substring(7, 8))
+    var button = arrButtonClicked[arrButtonClicked.length - 1];
+    var but = button.substring(7, 8)
+    console.log(button.substring(7, 8));
+    var buttonsArray = []
+    for (var i = 1; i <= 9; i++) {
+        buttonsArray.push($(".button-" + but + "-" + i));
+    }
+    if (verifyLines(but)) {
 
+        buttonsArray.forEach(button => {
+            button.show()
+        })
+
+        $("#square" + but).css("padding", "20px");
+        $("." + but).show()
+        $("#img" + but).hide()
+        $("#img" + but).removeAttr("src");
+
+    }
+    $("button[class^=" + button + "]").css("background", "white")
+    $("button[class^=" + button + "]").css("border-color", "black")
+    $("button[class^=" + button + "]").text("")
+    $("button[class^=" + button + "]").on('click', click);
     var classbutton = arrButtonClicked[arrButtonClicked.length - 2]
     $("button[class^=" + classbutton + "]").css("text-decoration-line", "underline")
     arrButtonClicked.pop()
+    nextFocus(but)
     backOnOrOff()
 }
 
