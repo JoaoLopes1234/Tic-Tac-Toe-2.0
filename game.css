@@ -71,7 +71,7 @@ button:hover {
     /* Cor do texto quando hover */
     border: 1px solid #007bff;
     /* Borda quando hover */
-    transition: background-color 1s ease;
+    transition: background-color 1s linear;
     /* Transição suave de cor de fundo */
 }
 

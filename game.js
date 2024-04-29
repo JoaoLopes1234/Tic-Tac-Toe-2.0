@@ -56,6 +56,7 @@ function verifyLines(num) {
                 $("#square" + num).css("padding", "0px");
                 $("." + num).remove()
                 $("#img" + num).show()
+                $("#success")[0].play()
             }
         });
         return true;
@@ -107,6 +108,7 @@ function click() {
     nextFocus(numOfButton);
     console.log("Cliques: " + x);
     shadow()
+    $("#click")[0].play()
 }
 
 function backClick() {
@@ -157,7 +159,6 @@ function lastClick() {
 
 function shadow() {
     if (x % 2) {
-        console.log("certerza");
         $(".shadowGreen").css("filter", "drop-shadow(5px 5px 5px black)")
         $(".shadowRed").css("filter", "drop-shadow(0px 0px 0px red)")
     }
