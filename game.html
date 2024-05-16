@@ -167,9 +167,21 @@
     <div id="game">
         <button class="backAndFront back">Back</button>
         <button class="backAndFront restart">Restart</button>
-        <button class="backAndFront rule">Rules</button>
+        <button class="backAndFront" onclick="redirectToRules()">Rules</button>
     </div>
 
+    <script>
+        function redirectToRules() {
+            // Get the current query string from the URL
+            var queryString = window.location.search;
+
+            // Construct the new URL for the rules.html page, including the query string
+            var newUrl = 'rules.html' + queryString;
+
+            // Redirect to the new URL
+            window.location.href = newUrl;
+        }
+    </script>
 </body>
 
 </html>

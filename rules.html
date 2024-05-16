@@ -1,14 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Rules</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="rules.css">
 </head>
+
 <body>
 
-    
-    
+    <h1 class="center">Game Rules</h1>
+    <div class="center">
+        <div class="side">
+            <h3 class="rules">Main Board and Mini Games: </h3>
+            <div class="rules">
+                <p class="explain">The main board consists of 9 mini games, arranged in a 3x3 grid.
+                    Each mini game is a standard 3x3 tic-tac-toe board, referred to as a "mini game board".</p>
+            </div>
+            <h3 class="rules">Turns and Moves:</h3>
+            <div class="rules">
+                <p class="explain">
+                    On your turn, you play in a square of a mini game.
+                    The square you play in determines which mini game your opponent will play in next.
+                    For example, if you play in the center square of your mini game, your opponent must play in the
+                    central mini game on the main board.
+                </p>
+            </div>
+        </div>
+        <div class="side">
+            <h3 class="rules">Victory Conditions:</h3>
+            <div class="rules">
+                <p class="explain">
+                    Each mini game follows tic-tac-toe rules. Winning a mini game secures it for that player.
+                    The goal is to win three mini games in a row on the main board (horizontally, vertically, or
+                    diagonally).
+                </p>
+            </div>
+            <h3 class="rules">Forced and Free Moves:</h3>
+            <div class="rules">
+                <p class="explain">
+                    If the mini game corresponding to the forced move is already complete (i.e., already has a winner or
+                    is
+                    a
+                    tie), the player can choose any mini game to play in.
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="center">
+        <button onclick="redirectToRules()">Rules</button>
+    </div>
+
+
+
+    <script>
+        function redirectToRules() {
+            // Get the current query string from the URL
+            var queryString = window.location.search;
+
+            // Construct the new URL for the rules.html page, including the query string
+            var newUrl = 'game.html' + queryString;
+
+            // Redirect to the new URL
+            window.location.href = newUrl;
+        }
+    </script>
+
+
 </body>
+
 </html>

@@ -1,0 +1,55 @@
+.rules {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 80px;
+    width: 300px;
+}
+
+body {
+    background-color: #cce5ff;
+}
+
+.explain {
+    width: 400px;
+    text-align: justify;
+    text-indent: 30px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.side {
+    height: 450px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    height: 24px;
+    text-align: center;
+    border: 1px solid #000;
+    background-color: #fff;
+    width: 100px;
+    border-radius: 50px;
+    font-family: 'Indie Flower', cursive;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #007bff;
+    /* Cor de fundo quando hover */
+    color: #fff;
+    /* Cor do texto quando hover */
+    border: 1px solid #007bff;
+    /* Borda quando hover */
+    transition: background-color 1s linear;
+    /* Transição suave de cor de fundo */
+}

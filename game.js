@@ -3,8 +3,8 @@ let x = 0;
 let clickback = 0;
 $(document).ready(() => {
 
-    $(".player1Name").html(obterParametro('player1'))
-    $(".player2Name").html(obterParametro('player2'))
+    $(".player1Name").html(getInfoUrl('player1'))
+    $(".player2Name").html(getInfoUrl('player2'))
     backOnOrOff()
     $(".back").on("click", backClick)
     $(".restart").on("click", restartClick)
@@ -163,7 +163,7 @@ function XorO(num) {
         $("button[class^=" + num + "]").off('click');
     }
 }
-function obterParametro(nome) {
+function getInfoUrl(nome) {
     // Obtém o valor do parâmetro especificado na URL
     return new URLSearchParams(window.location.search).get(nome);
 }
