@@ -55,6 +55,7 @@ function verifyLines(num) {
                 button.hide()
             }
         });
+
         $("#square" + num).css("padding", "0px");
         $("." + num).hide()
         $("#img" + num).show()
@@ -96,19 +97,20 @@ function click() {
     console.log($(this).attr("class"));
     arrButtonClicked.push($(this).attr("class"))
 
-    lastClick()
     x++;
-    backOnOrOff()
-
     XorO($(this).attr("class"))
     let numOfSquare = $(this).attr("class").substring(7, 8)
     verifyLines(numOfSquare);
 
+    lastClick()
+
     let numOfButton = $(this).attr("class").substring(9, 10);
     nextFocus(numOfButton);
-    console.log("Cliques: " + x);
-    shadow()
+
     $("#click")[0].play()
+    shadow()
+    backOnOrOff()
+    endGame()
 }
 
 function backClick() {
@@ -182,4 +184,47 @@ function shadow() {
         $(".shadowRed").css("filter", "drop-shadow(5px 5px 5px black)")
         $(".shadowGreen").css("filter", "drop-shadow(0px 0px 0px green)")
     }
+}
+
+function endGame() {
+    let img1 = $("#img1").attr("src");
+    let img2 = $("#img2").attr("src");
+    let img3 = $("#img3").attr("src");
+    let img4 = $("#img4").attr("src");
+    let img5 = $("#img5").attr("src");
+    let img6 = $("#img6").attr("src");
+    let img7 = $("#img7").attr("src");
+    let img8 = $("#img8").attr("src");
+    let img9 = $("#img9").attr("src");
+
+    let query = window.location.search;
+    let params = new URLSearchParams(query);
+
+    console.log(params.get('player1'));
+
+
+    if ((img1 === "resources/GreenBall.png" && img2 === "resources/GreenBall.png" && img3 === "resources/GreenBall.png") ||
+        (img1 === "resources/GreenBall.png" && img4 === "resources/GreenBall.png" && img7 === "resources/GreenBall.png") ||
+        (img7 === "resources/GreenBall.png" && img8 === "resources/GreenBall.png" && img9 === "resources/GreenBall.png") ||
+        (img3 === "resources/GreenBall.png" && img6 === "resources/GreenBall.png" && img9 === "resources/GreenBall.png") ||
+        (img1 === "resources/GreenBall.png" && img5 === "resources/GreenBall.png" && img9 === "resources/GreenBall.png") ||
+        (img3 === "resources/GreenBall.png" && img5 === "resources/GreenBall.png" && img7 === "resources/GreenBall.png") ||
+        (img2 === "resources/GreenBall.png" && img5 === "resources/GreenBall.png" && img8 === "resources/GreenBall.png") ||
+        (img4 === "resources/GreenBall.png" && img5 === "resources/GreenBall.png" && img6 === "resources/GreenBall.png")) {
+
+        window.location.href = 'Winner.html?player2=' + params.get('player2');
+    }
+    if ((img1 === "resources/RedCross.png" && img2 === "resources/RedCross.png" && img3 === "resources/RedCross.png") ||
+        (img1 === "resources/RedCross.png" && img4 === "resources/RedCross.png" && img7 === "resources/RedCross.png") ||
+        (img7 === "resources/RedCross.png" && img8 === "resources/RedCross.png" && img9 === "resources/RedCross.png") ||
+        (img3 === "resources/RedCross.png" && img6 === "resources/RedCross.png" && img9 === "resources/RedCross.png") ||
+        (img1 === "resources/RedCross.png" && img5 === "resources/RedCross.png" && img9 === "resources/RedCross.png") ||
+        (img3 === "resources/RedCross.png" && img5 === "resources/RedCross.png" && img7 === "resources/RedCross.png") ||
+        (img2 === "resources/RedCross.png" && img5 === "resources/RedCross.png" && img8 === "resources/RedCross.png") ||
+        (img4 === "resources/RedCross.png" && img5 === "resources/RedCross.png" && img6 === "resources/RedCross.png")) {
+
+        window.location.href = 'Winner.html?player1=' + params.get('player1');
+    }
+
+
 }

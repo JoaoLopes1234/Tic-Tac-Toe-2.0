@@ -9,6 +9,9 @@
 
 body {
     background-color: #cce5ff;
+    transform: scale(1.5);
+    transform-origin: top;
+    overflow: hidden;
 }
 
 .explain {
@@ -37,7 +40,6 @@ button {
     text-align: center;
     border: 1px solid #000;
     background-color: #fff;
-    width: 100px;
     border-radius: 50px;
     font-family: 'Indie Flower', cursive;
     margin: 10px;
@@ -52,4 +54,15 @@ button:hover {
     /* Borda quando hover */
     transition: background-color 1s linear;
     /* Transição suave de cor de fundo */
+}
+
+.win {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    transform: scale(1.5);
 }

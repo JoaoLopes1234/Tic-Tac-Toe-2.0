@@ -12,7 +12,7 @@ button {
     background-color: #fff;
     border-radius: 20%;
     margin: 2px;
-    font-size: 23px;
+    font-size: 22px;
 }
 
 
@@ -41,6 +41,11 @@ button {
 
 body {
     background-color: #cce5ff;
+    transform-origin: top;
+    overflow: hidden;
+    /* Ajusta a altura do body para preencher a tela */
+    transform: scale(1.5);
+    /* Ajusta a largura do body para preencher a tela */
 }
 
 button[disabled] {
@@ -83,5 +88,5 @@ button:hover {
 }
 
 .shadow {
-    filter : drop-shadow(5px 5px 5px red) ;
+    filter: drop-shadow(5px 5px 5px red);
 }

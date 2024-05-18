@@ -1,5 +1,9 @@
 body {
     background-color: #cce5ff;
+    font-size: 23px;
+    transform: scale(1.2);
+    transform-origin: top;
+    overflow: hidden;
 }
 
 #center {
@@ -7,6 +11,23 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+}
+
+input[type="text"] {
+    padding: 10px; /* espaço interno dentro do input */
+    border: 2px solid #ccc; /* borda do input */
+    border-radius: 5px; /* arredondamento dos cantos da borda */
+    font-size: 16px; /* tamanho da fonte */
+    color: #333; /* cor do texto */
+    background-color: #f9f9f9; /* cor de fundo do input */
+    transition: border-color 0.3s ease-in-out; /* transição suave da cor da borda */
+}
+
+/* estilo do input quando está em foco */
+input[type="text"]:focus {
+    outline: none; /* remove o contorno padrão do foco */
+    border-color: #007bff; /* cor da borda quando está em foco */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* sombra quando está em foco */
 }
 
 form {
@@ -31,3 +52,32 @@ form {
     margin-right: 20px;
     /* Espaçamento entre os formulários */
 }
+
+button {
+    text-align: center;
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 2px;
+    font-size: 23px;
+}
+
+button:hover {
+    background-color: #007bff;
+    /* Cor de fundo quando hover */
+    color: #fff;
+    /* Cor do texto quando hover */
+    border: 1px solid #007bff;
+    /* Borda quando hover */
+    transition: background-color 1s linear;
+    /* Transição suave de cor de fundo */
+}
+
+/* Estilo do contêiner do botão para centralização */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Pode ajustar conforme necessário */
+}
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Rules</title>
+    <link rel="stylesheet" href="rules.css">
+    <link rel="website icon" type="png" href="resources/game-icons--tic-tac-toe.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1 class="center">Congrast!!</h1>
+    <div class="win">
+        <img src="" alt="" class="winner">
+        <div class="congrast">Congrast </div>
+<br><br>
+        <button onclick="redirectToHome()">Play Again</button>
+    </div>
+
+
+
+
+    <script>
+        let nameURL = window.location.search;
+
+        let params = new URLSearchParams(nameURL)
+
+        let name;
+
+
+        function redirectToHome() {
+            // Get the current query string from the URL
+            //var queryString = window.location.search;
+
+            // Construct the new URL for the rules.html page, including the query string
+            //var newUrl = 'game.html' + queryString;
+
+            // Redirect to the new URL
+            window.location.href = 'home.html';
+        }
+        function getName() {
+
+            if (params.has('player1')) {
+                name = params.get("player1")
+                $(".congrast").append(name);
+                $(".winner").attr('src', "resources/vermelho.png")
+            }
+            else {
+                name = params.get("player2");
+                $(".congrast").append(name);
+                $(".winner").attr('src', "resources/verde.png")
+            }
+
+
+
+
+
+
+
+        }
+        function speak() {
+            var msg = new SpeechSynthesisUtterance();
+            var voices = window.speechSynthesis.getVoices();
+            msg.voice = voices[10];
+            msg.volume = 1;
+            msg.rate = 1;
+            msg.pitch = 1;
+            msg.text = "Congrats" + name;
+            window.speechSynthesis.speak(msg);
+        }
+        console.log(name);
+        getName();
+        //speak();
+
+    </script>
+
+
+</body>
+
+</html>
