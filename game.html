@@ -12,17 +12,24 @@
     <link rel="website icon" type="png" href="resources/game-icons--tic-tac-toe.png">
 </head>
 
-<body> 
+<body>
     <audio id="click" src="resources/mouse-click.mp3"></audio>
     <audio id="success" src="resources/success.mp3"></audio>
-    <h1 id="game">Tic-tac-toe-2.0</h1>
-    <h3 id="game"></h3>
-    <div id="game">
+    <h1 id="game" class="margin1">Tic-tac-toe-2.0</h1>
+    <div class="perfis">
         <div class="perfil">
-            <img src="resources/vermelho.png" class="shadowRed">
             <p class="player1Name"></p>
-            <p>X</p>
+            <img src="resources/vermelho.png" class="shadowRed">
+            
         </div>
+        <div class="perfil">
+            <p class="player2Name"></p>
+            <img src="resources/verde.png" class="shadowGreen">
+            
+        </div>
+    </div>
+    <div id="game">
+
         <div class="tic-tac">
             <div id="upper">
                 <div class="square" id="square1">
@@ -159,11 +166,7 @@
 
         </div>
 
-        <div class="perfil">
-            <img src="resources/verde.png" class="shadowGreen">
-            <p class="player2Name"></p>
-            <p>O</p>
-        </div>
+
     </div>
     <div id="game">
         <button class="backAndFront back">Back</button>

@@ -81,3 +81,23 @@ button:hover {
     height: 100px; /* Pode ajustar conforme necessário */
 }
 
+@media screen {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .button-container {
+        align-items: end;
+    }
+}

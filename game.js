@@ -3,8 +3,8 @@ let x = 0;
 let clickback = 0;
 $(document).ready(() => {
 
-    $(".player1Name").html(getInfoUrl('player1'))
-    $(".player2Name").html(getInfoUrl('player2'))
+    $(".player1Name").html(getInfoUrl('player1') + " < X >")
+    $(".player2Name").html(getInfoUrl('player2') + " < O >")
     backOnOrOff()
     $(".back").on("click", backClick)
     $(".restart").on("click", restartClick)
