@@ -150,6 +150,7 @@ button:hover {
         margin: 0px;
         font-size: 17px;
         padding: 0px;
+        
     }
     .square {
         padding: 5px;
@@ -184,6 +185,7 @@ button:hover {
     }
     button {
         width: 30px;
+        
         height: 30px;
         font-size: 29px;
     }

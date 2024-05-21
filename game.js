@@ -155,13 +155,20 @@ function XorO(num) {
         //$(this).css("background-image", "url('resources/cruz.png'")
         $("button[class^=" + num + "]").text("X")
         $("button[class^=" + num + "]").css("color", "red")
+        
 
         $("button[class^=" + num + "]").off('click');
     }
     else {
         //$(this).css("background-image", "url('resources/bola.png'")
-        $("button[class^=" + num + "]").text("O")
-        $("button[class^=" + num + "]").css("color", "green")
+        $("button[class^=" + num + "]").each(function() {
+            if ($(this).text() === '') {
+                $(this).text("O");
+                $(this).css("color", "green")
+            }
+        });
+        
+        
         $("button[class^=" + num + "]").off('click');
     }
 }
