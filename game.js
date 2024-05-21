@@ -160,7 +160,7 @@ function XorO(num) {
     }
     else {
         //$(this).css("background-image", "url('resources/bola.png'")
-        $("button[class^=" + num + "]").html("O")
+        $("button[class^=" + num + "]").text("O")
         $("button[class^=" + num + "]").css("color", "green")
         $("button[class^=" + num + "]").off('click');
     }
