@@ -32,7 +32,10 @@
             <br>
         </form>
     </div>
+    <br><br>
     <div class="button-container">
+
+        <button class="" onclick="redirectToRules()">Rules</button>
         <button id="center" class="redirectButton">Start Game</button>
     </div>
     <script>
@@ -50,7 +53,19 @@
                 var url = 'game.html?player1=' + encodeURIComponent(player1) + '&player2=' + encodeURIComponent(player2);
                 window.location.href = url;
             }
+
+
         });
+        function redirectToRules() {
+            // Get the current query string from the URL
+            var queryString = window.location.search;
+
+            // Construct the new URL for the rules.html page, including the query string
+            var newUrl = 'rules.html';
+
+            // Redirect to the new URL
+            window.location.href = newUrl;
+        }
     </script>
 
 </body>

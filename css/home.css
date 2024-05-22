@@ -78,6 +78,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100px; /* Pode ajustar conforme necessário */
 }
 
@@ -99,7 +100,5 @@ button:hover {
         align-items: center;
         flex-direction: column;
     }
-    .button-container {
-        align-items: end;
-    }
+
 }

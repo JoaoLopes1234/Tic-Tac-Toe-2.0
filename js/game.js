@@ -3,6 +3,7 @@ let x = 0;
 let clickback = 0;
 $(document).ready(() => {
 
+
     $(".player1Name").html(getInfoUrl('player1') + " < X >")
     $(".player2Name").html(getInfoUrl('player2') + " < O >")
     backOnOrOff()
@@ -220,7 +221,6 @@ function endGame() {
     let query = window.location.search;
     let params = new URLSearchParams(query);
 
-    console.log(params.get('player1'));
 
 
     if ((img1 === "resources/GreenBall.png" && img2 === "resources/GreenBall.png" && img3 === "resources/GreenBall.png") ||
