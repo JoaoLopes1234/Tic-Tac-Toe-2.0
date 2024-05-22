@@ -81,7 +81,7 @@ button:hover {
     height: 100px; /* Pode ajustar conforme necessário */
 }
 
-@media screen {
+@media (max-width: 600px) {
     .container {
         display: flex;
         justify-content: center;
@@ -89,9 +89,11 @@ button:hover {
         flex-direction: column;
     }
     h1 {
-        font-size: 24px;
+        font-size: 18px;
     }
     body {
+        transform: scale(1.0);
+        background-color: lightblue;
         display: flex;
         justify-content: center;
         align-items: center;
