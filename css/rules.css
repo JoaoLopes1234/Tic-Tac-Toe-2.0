@@ -3,7 +3,6 @@
     justify-content: center;
     align-items: center;
     margin: 20px;
-    height: 80px;
     width: 300px;
 }
 
@@ -15,7 +14,6 @@ body {
 }
 
 .explain {
-    width: 400px;
     text-align: justify;
     text-indent: 30px;
     box-shadow: 2px 2px 5px 10px rgba(0, 0, 0, 0.5);
@@ -77,4 +75,7 @@ img {
         margin: 5px;
     }
 
+    h1 {
+        margin: 5px;
+    }
 }
