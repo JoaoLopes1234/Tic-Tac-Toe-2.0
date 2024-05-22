@@ -120,7 +120,7 @@ button:hover {
 @media (max-width: 600px) {
     body {
         background-color: lightblue;
-        overflow: scroll;
+        overflow: hidden;
         transform: scale(1.0);
     }
     #center {

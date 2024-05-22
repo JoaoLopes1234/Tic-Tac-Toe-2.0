@@ -67,6 +67,7 @@ img {
     body {
         transform: scale(1.0);
         background-color: lightblue;
+        overflow: scroll;
     }
     .center {
         flex-direction: column;
