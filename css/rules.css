@@ -25,12 +25,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .side {
-    height: 450px;
-    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,4 +63,18 @@ button:hover {
 
 img {
     transform: scale(1.5);
+}
+
+@media (max-width: 600px) {
+    body {
+        transform: scale(1.0);
+        background-color: lightblue;
+    }
+    .center {
+        flex-direction: column;
+    }
+    .rules {
+        margin: 5px;
+    }
+
 }
