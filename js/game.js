@@ -128,7 +128,20 @@ function backClick() {
             button.show()
         })
 
-        $("#square" + but).css("padding", "20px");
+        
+        var larguraTela = $(window).width();
+
+        // Determinar o valor do padding com base na largura da tela
+        var paddingValue;
+        if (larguraTela < 600) {
+            paddingValue = "5px";
+        } else if (larguraTela < 1200) {
+            paddingValue = "10px";
+        } else {
+            paddingValue = "12px";
+        }
+
+        $("#square" + but).css("padding", paddingValue);
         $("." + but).show()
         $("#img" + but).hide()
         $("#img" + but).removeAttr("src");
@@ -155,20 +168,20 @@ function XorO(num) {
         //$(this).css("background-image", "url('resources/cruz.png'")
         $("button[class^=" + num + "]").text("X")
         $("button[class^=" + num + "]").css("color", "red")
-        
+
 
         $("button[class^=" + num + "]").off('click');
     }
     else {
         //$(this).css("background-image", "url('resources/bola.png'")
-        $("button[class^=" + num + "]").each(function() {
+        $("button[class^=" + num + "]").each(function () {
             if ($(this).text() === '') {
                 $(this).text("O");
                 $(this).css("color", "green")
             }
         });
-        
-        
+
+
         $("button[class^=" + num + "]").off('click');
     }
 }
