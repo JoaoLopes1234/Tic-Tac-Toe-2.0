@@ -18,17 +18,19 @@
 <body>
     <audio id="click" src="resources/mouse-click.mp3"></audio>
     <audio id="success" src="resources/success.mp3"></audio>
+    <audio src="resources/music-game.mp3" autoplay loop id="audio"></audio>
+
     <h1 id="game" class="margin1">Tic-tac-toe-2.0</h1>
     <div class="perfis">
         <div class="perfil">
             <p class="player1Name"></p>
             <img src="resources/vermelho.png" class="shadowRed">
-            
+
         </div>
         <div class="perfil">
             <p class="player2Name"></p>
             <img src="resources/verde.png" class="shadowGreen">
-            
+
         </div>
     </div>
     <div id="game">
@@ -178,6 +180,12 @@
 
 
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var audioElement = document.getElementById("audio");
+            audioElement.volume = 0.1; // Define o volume para 10%
+        });
+    </script>
 
 </body>
 

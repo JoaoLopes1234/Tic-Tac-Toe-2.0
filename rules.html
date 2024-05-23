@@ -11,6 +11,7 @@
 
 <body>
 
+    <audio src="resources/music-game.mp3" autoplay loop id="audio"></audio>
     <h1 class="center">Game Rules</h1>
     <div class="center">
         <div class="side">
@@ -69,7 +70,14 @@
             // Redirect to the new URL
             window.location.href = newUrl;
         }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            var audioElement = document.getElementById("audio");
+            audioElement.volume = 0.1; // Define o volume para 10%
+        });
     </script>
+
+    
 
 
 </body>

@@ -11,6 +11,9 @@
 </head>
 
 <body class="">
+
+
+    <audio src="resources/music-game.mp3" autoplay loop id="audio"></audio>
     <h1 id="center">Welcome to Tic-tac-Toe-2.0</h1>
     <br>
     <br>
@@ -66,6 +69,12 @@
             // Redirect to the new URL
             window.location.href = newUrl;
         }
+        document.addEventListener("DOMContentLoaded", function () {
+            var audioElement = document.getElementById("audio");
+            audioElement.volume = 0.1; // Define o volume para 10% 
+        })
+    </script>
+
     </script>
 
 </body>

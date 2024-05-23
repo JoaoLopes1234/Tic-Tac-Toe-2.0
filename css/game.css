@@ -19,6 +19,7 @@ button {
 .square {
     padding: 20px;
     border: 1.5px solid black;
+    margin: 0px;
 }
 
 #upper {
