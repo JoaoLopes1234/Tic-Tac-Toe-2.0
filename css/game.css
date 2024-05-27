@@ -31,13 +31,14 @@ button {
 .margin1 {
     margin: 1px;
     margin-top: 20px;
+    padding: 0px;
 }
 
 .perfil img {
     max-width: 100px;
     height: auto;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 #middle {
@@ -86,6 +87,7 @@ button[disabled] {
 .tic-tac {
     margin: 20px;
     filter: drop-shadow(0px 0px 10px gray);
+    padding: 0px;
 }
 
 button:hover {
@@ -156,12 +158,14 @@ button:hover {
     .square {
         padding: 5px;
         border: 1.5px solid black;
+        margin: 0px;
     
     }
     img {
         width: 70px;
         height: 66px;
         margin: 0px;
+        padding: 0px;
     }
 
     .backAndFront {
