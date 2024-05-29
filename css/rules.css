@@ -8,9 +8,9 @@
 
 body {
     background-color: #cce5ff;
-    transform: scale(1.5);
-    transform-origin: top;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .explain {
@@ -30,6 +30,27 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.container {
+    transform: scale(1.5);
+    transform-origin: top;
+    overflow: hidden;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
 
 button {
     height: 24px;
@@ -65,13 +86,18 @@ img {
 
 @media (max-width: 600px) {
     body {
-        transform: scale(1.0);
         background-color: lightblue;
         overflow: scroll;
     }
+
+    .container {
+        transform: scale(1.0);
+    }
+
     .center {
         flex-direction: column;
     }
+
     .rules {
         margin: 5px;
     }
